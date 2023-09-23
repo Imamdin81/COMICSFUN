@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+module.exports = {
+reactStrictMode: true,
+redirects: async () => {
+return [
+{
+source: '/about',
+destination: '/',
+permanent: false,
+},
+{
+source: '/old-blog/id',
+destination: '/new-blog/:id',
+Permanent: true,
 }
-
-module.exports = nextConfig
+]
+},
+}
